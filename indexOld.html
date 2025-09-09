@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Black Sun Games Inc.</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: transparent !important;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .game-card:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 border-b border-gray-700">
+    <img src="BSGlogoWhite.png" alt="Black Sun Games Logo" class="h-12">
+    <div class="flex space-x-4">
+      <a href="#"><img src="Steam_icon_logo.svg.png" alt="Steam" class="h-6"></a>
+      <a href="#"><img src="Facebook-logo.png" alt="Facebook" class="h-6"></a>
+      <a href="#"><img src="Xlogo.png" alt="Twitter" class="h-6"></a>
+      <a href="#"><img src="PatreonLogo.png" alt="Patreon" class="h-6"></a>
+      <a href="#"><img src="YouTubeLogo.png" alt="YouTube" class="h-6"></a>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="bg-gray-900 text-white text-center py-4">
+    <ul class="flex justify-center space-x-10">
+      <li><a href="#" class="hover:text-yellow-400">Home</a></li>
+      <li><a href="#" class="hover:text-yellow-400">Our Games</a></li>
+      <li><a href="#" class="hover:text-yellow-400">About</a></li>
+      <li><a href="#" class="hover:text-yellow-400">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-96 overflow-hidden">
+    <img src="man-in-sleek-scifi-space-outfit-on-hoverboard-flying-at-great-speed-through-giant-tube-in-space-3353.png" class="w-full h-full object-cover opacity-60" alt="Hero Image">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Welcome to Black Sun Games</h1>
+    </div>
+  </section>
+
+  <!-- Studio Intro -->
+  <section class="text-center px-6 py-12">
+    <h2 class="text-3xl font-bold mb-4">We Craft Worlds Beyond the Stars</h2>
+    <p class="max-w-2xl mx-auto text-gray-300">
+      Black Sun Games Inc. is an independent game development studio bringing passion, creativity, and innovation to every project. We build across genres and platforms, always pushing toward new frontiers in interactive storytelling.
+    </p>
+  </section>
+
+  <!-- Game Previews -->
+  <section class="px-6 py-12 bg-gray-800">
+    <h2 class="text-2xl font-bold text-center mb-8">Our Games</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="game-card bg-gray-900 p-4 rounded shadow hover:shadow-lg">
+        <img src="commander.png" class="w-full h-40 object-cover rounded mb-4" alt="Max Twist">
+        <h3 class="text-xl font-bold">Max Twist</h3>
+        <p class="text-sm text-gray-400">Our first VR arcade hit — dodge, spin, and conquer in zero-g!</p>
+      </div>
+      <div class="game-card bg-gray-900 p-4 rounded shadow hover:shadow-lg">
+        <img src="scientist.png" class="w-full h-40 object-cover rounded mb-4" alt="Cat Defenders in Space">
+        <h3 class="text-xl font-bold">Cat Defenders in Space</h3>
+        <p class="text-sm text-gray-400">Coming soon: tactical cat-squad FPS chaos in zero gravity!</p>
+      </div>
+      <div class="game-card bg-gray-900 p-4 rounded shadow hover:shadow-lg">
+        <img src="admiral.png" class="w-full h-40 object-cover rounded mb-4" alt="Aranthia">
+        <h3 class="text-xl font-bold">Aranthia</h3>
+        <p class="text-sm text-gray-400">A deep PvP MMORPG steeped in rich lore, factions, and strategy.</p>
+      </div>
+      <div class="game-card bg-gray-900 p-4 rounded shadow hover:shadow-lg">
+        <img src="man-in-sleek-scifi-space-outfit-on-hoverboard-flying-at-great-speed-through-giant-tube-in-space-3353.png" class="w-full h-40 object-cover rounded mb-4" alt="Terrestrial Conquest">
+        <h3 class="text-xl font-bold">Terrestrial Conquest</h3>
+        <p class="text-sm text-gray-400">PC & Mobile strategy game — control territories and shape your empire.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center text-gray-500 py-6 mt-12">
+    <p>&copy; 2025 Black Sun Games Inc. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

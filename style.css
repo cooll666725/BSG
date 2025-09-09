@@ -1,0 +1,40 @@
+/* === General Body Styles === */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+}
+
+/* === Transparent Layout Sections === */
+header, nav, .hero, .main-content, footer {
+  background-color: transparent !important;
+}
+
+/* === Optional Text Shadow for Visibility === */
+h1, h2, h3, p, a, li, span {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.85);
+}
+
+/* Keep nav dropdown open on hover/focus (Tailwind v2-safe) */
+nav .menu-group:hover .menu-panel,
+nav .menu-group:focus-within .menu-panel { display: block; }
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* equivalent to space-x-4 */
+  margin-top: 1rem;
+}
+
+.section-overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark but transparent */
+  backdrop-filter: blur(2px); /* Optional: adds a blur effect for readability */
+  padding: 3rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
