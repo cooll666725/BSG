@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terrestrial Conquest — Black Sun Games</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .tile { position: relative; }
+    .badge { position:absolute; right:.5rem; bottom:.5rem; display:flex; gap:.5rem; }
+    .badge a img { height:28px; width:auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
+    .tile:hover .overlay { opacity:1; }
+    .overlay { position:absolute; inset:0; background:rgba(0,0,0,.25); opacity:0; transition:.2s; border-radius:.5rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 bg-gray-800">
+    <a href="index.html"><img src="BSGlogoWhite.png" alt="Black Sun Games Logo" class="h-12"></a>
+    <div class="flex space-x-4">
+      <a href="https://store.steampowered.com/search/?developer=Black%20Sun%20Games%20Inc."><img src="Steam_icon_logo.svg.png" alt="Steam" class="h-6"></a>
+      <a href="https://www.facebook.com/gaming/BattleBSG"><img src="Facebook-logo.png" alt="Facebook" class="h-6"></a>
+      <a href="https://x.com/Black_Sun_Games"><img src="Xlogo.png" alt="Twitter" class="h-6"></a>
+      <a href="https://www.patreon.com/blacksungames"><img src="PatreonLogo.png" alt="Patreon" class="h-6"></a>
+      <a href="https://www.youtube.com/@black-sun-games/featured"><img src="YouTubeLogo.png" alt="YouTube" class="h-6"></a>
+    </div>
+  </header>
+
+ <!-- Navigation -->
+  <nav class="navbar relative z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-center h-14">
+        <ul class="flex items-center space-x-32">
+          <li><a href="index.html" class="nav-item">Home</a></li>
+
+          <!-- Our Games: clickable + dropdown (CSS-controlled) -->
+          <li class="relative menu-group">
+            <a href="ourgames.html" class="nav-item">
+              Our Games
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+
+            <!-- Submenu -->
+            <ul class="menu-panel hidden absolute left-0 top-full w-56 mt-0 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+              <li><a href="max-twist.html" class="block px-4 py-2 hover:bg-gray-700">Max Twist</a></li>
+              <li><a href="space-vault.html" class="block px-4 py-2 hover:bg-gray-700">Space Vault</a></li>
+              <li><a href="codename-castles.html" class="block px-4 py-2 hover:bg-gray-700">Codename-Castles</a></li>
+              <li><a href="terrestrial-conquest.html" class="block px-4 py-2 hover:bg-gray-700">Terrestrial Conquest</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html" class="nav-item">About</a></li>
+          <li><a href="contact.html" class="nav-item">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile dropdown -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-gray-800">
+    <a href="index.html" class="block px-4 py-3 hover:bg-gray-800">Home</a>
+    <details class="px-4 py-3">
+      <summary class="cursor-pointer hover:text-yellow-400 select-none">Our Games</summary>
+      <div class="mt-2 pl-4 space-y-1">
+        <a href="our-games.html" class="block py-2 hover:text-yellow-400">All Games</a>
+        <a href="max-twist.html" class="block py-2 hover:text-yellow-400">Max Twist</a>
+        <a href="space-vault.html" class="block py-2 hover:text-yellow-400">Space Vault</a>
+        <a href="codename-castles.html" class="block py-2 hover:text-yellow-400">Codename-Castles</a>
+        <a href="terrestrial-conquest.html" class="block py-2 hover:text-yellow-400">Terrestrial Conquest</a>
+      </div>
+    </details>
+    <a href="about.html" class="block px-4 py-3 hover:bg-gray-800">About</a>
+    <a href="contact.html" class="block px-4 py-3 hover:bg-gray-800">Contact</a>
+  </div>
+</nav>
+
+<script>
+  // Simple mobile toggle
+  document.getElementById('mobileToggle')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Tiny "hover intent" for desktop to prevent flicker when leaving the trigger
+  (function(){
+    const li = document.getElementById('gamesMenu');
+    let hideTimer;
+    li.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimer);
+      li.classList.add('hovering');
+    });
+    li.addEventListener('mouseleave', () => {
+      hideTimer = setTimeout(() => li.classList.remove('hovering'), 120);
+    });
+  })();
+</script>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Terrestrial Conquest — Black Sun Games</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head><body class="bg-black text-gray-200">
+  <div data-include="header"></div>
+  <div data-include="nav"></div>
+
+  <header class="relative overflow-hidden bg-gradient-to-b from-gray-900 to-black">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+      <h1 class="text-4xl md:text-5xl font-bold">Terrestrial Conquest</h1>
+      <p class="mt-4 text-gray-300 max-w-2xl">Strategy. Discovery. Dominion.</p>
+      <!--<div class="mt-6 flex items-center gap-4">
+        <a class="px-5 py-3 bg-yellow-500 text-black font-semibold rounded hover:bg-yellow-400"
+           href="https://store.steampowered.com/search/?developer=Black%20Sun%20Games%20Inc.">View on Steam</a>-->
+        <!-- Add platform/store buttons as needed -->
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-12 space-y-10">
+    <section>
+      <h2 class="text-glass text-2xl font-semibold">TC Description</h2>
+      <p class="text-glass mt-2 text-gray-300">From the creators of Max Twist comes Terrestrial Conquest — a stylized, tile-based strategy game where every road, village, and decision shapes the fate of your realm. Inspired by the elegance of board games and the depth of classic empire builders, Terrestrial Conquest challenges you to expand, trade, and outmaneuver your rivals across a living medieval world.</p>
+      <p class="text-glass mt-2 text-gray-300">Build wisely. Claim the land. Conquer the world — one tile at a time.</p>
+	</section>
+
+    <section>
+  <h2 class="text-glass text-2xl font-semibold">Media</h2>
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+    <!-- Images (now same size/columns as videos) -->
+    <div class="bg-gray-800 aspect-video rounded overflow-hidden flex items-center justify-center">
+      <img src="terrestrial-conquest.png" alt="Terrestrial Conquest" class="w-full h-full object-cover">
+    </div>
+    <div class="bg-gray-800 aspect-video rounded overflow-hidden flex items-center justify-center">
+      <img src="TC.png" alt="Spearman, Archer, Horseman, and Swordsman" class="w-full h-full object-cover">
+    </div>
+	</div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-center text-gray-300 py-6 mt-12">
+    <p>&copy; 2025 Black Sun Games Inc. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://store.steampowered.com/search/?developer=Black%20Sun%20Games%20Inc."><img src="Steam_icon_logo.svg.png" alt="Steam" class="h-6"></a>
+      <a href="https://www.facebook.com/gaming/BattleBSG"><img src="Facebook-logo.png" alt="Facebook" class="h-6"></a>
+      <a href="https://x.com/Black_Sun_Games"><img src="Xlogo.png" alt="Twitter" class="h-6"></a>
+      <a href="https://www.patreon.com/blacksungames"><img src="PatreonLogo.png" alt="Patreon" class="h-6"></a>
+      <a href="https://www.youtube.com/@black-sun-games/featured"><img src="YouTubeLogo.png" alt="YouTube" class="h-6"></a>
+    </div>
+  </footer>
+  
+</body></html>

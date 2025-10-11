@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Max Twist — Black Sun Games</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .tile { position: relative; }
+    .badge { position:absolute; right:.5rem; bottom:.5rem; display:flex; gap:.5rem; }
+    .badge a img { height:28px; width:auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,.6)); }
+    .tile:hover .overlay { opacity:1; }
+    .overlay { position:absolute; inset:0; background:rgba(0,0,0,.25); opacity:0; transition:.2s; border-radius:.5rem; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="flex justify-between items-center p-4 bg-gray-800">
+    <a href="index.html"><img src="BSGlogoWhite.png" alt="Black Sun Games Logo" class="h-12"></a>
+    <div class="flex space-x-4">
+      <a href="https://store.steampowered.com/search/?developer=Black%20Sun%20Games%20Inc."><img src="Steam_icon_logo.svg.png" alt="Steam" class="h-6"></a>
+      <a href="https://www.facebook.com/gaming/BattleBSG"><img src="Facebook-logo.png" alt="Facebook" class="h-6"></a>
+      <a href="https://x.com/Black_Sun_Games"><img src="Xlogo.png" alt="Twitter" class="h-6"></a>
+      <a href="https://www.patreon.com/blacksungames"><img src="PatreonLogo.png" alt="Patreon" class="h-6"></a>
+      <a href="https://www.youtube.com/@black-sun-games/featured"><img src="YouTubeLogo.png" alt="YouTube" class="h-6"></a>
+    </div>
+  </header>
+
+ <!-- Navigation -->
+  <nav class="navbar relative z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-center h-14">
+        <ul class="flex items-center space-x-32">
+          <li><a href="index.html" class="nav-item">Home</a></li>
+
+          <!-- Our Games: clickable + dropdown (CSS-controlled) -->
+          <li class="relative menu-group">
+            <a href="ourgames.html" class="nav-item">
+              Our Games
+              <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.25 8.29a.75.75 0 01-.02-1.08z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+
+            <!-- Submenu -->
+            <ul class="menu-panel hidden absolute left-0 top-full w-56 mt-0 rounded-md bg-gray-800 shadow-lg ring-1 ring-black ring-opacity-5 z-50">
+              <li><a href="max-twist.html" class="block px-4 py-2 hover:bg-gray-700">Max Twist</a></li>
+              <li><a href="space-vault.html" class="block px-4 py-2 hover:bg-gray-700">Space Vault</a></li>
+              <li><a href="codename-castles.html" class="block px-4 py-2 hover:bg-gray-700">Codename-Castles</a></li>
+              <li><a href="terrestrial-conquest.html" class="block px-4 py-2 hover:bg-gray-700">Terrestrial Conquest</a></li>
+            </ul>
+          </li>
+
+          <li><a href="about.html" class="nav-item">About</a></li>
+          <li><a href="contact.html" class="nav-item">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile dropdown -->
+  <div id="mobileMenu" class="md:hidden hidden border-t border-gray-800">
+    <a href="index.html" class="block px-4 py-3 hover:bg-gray-800">Home</a>
+    <details class="px-4 py-3">
+      <summary class="cursor-pointer hover:text-yellow-400 select-none">Our Games</summary>
+      <div class="mt-2 pl-4 space-y-1">
+        <a href="our-games.html" class="block py-2 hover:text-yellow-400">All Games</a>
+        <a href="max-twist.html" class="block py-2 hover:text-yellow-400">Max Twist</a>
+        <a href="space-vault.html" class="block py-2 hover:text-yellow-400">Space Vault</a>
+        <a href="codename-castles.html" class="block py-2 hover:text-yellow-400">Codename-Castles</a>
+        <a href="terrestrial-conquest.html" class="block py-2 hover:text-yellow-400">Terrestrial Conquest</a>
+      </div>
+    </details>
+    <a href="about.html" class="block px-4 py-3 hover:bg-gray-800">About</a>
+    <a href="contact.html" class="block px-4 py-3 hover:bg-gray-800">Contact</a>
+  </div>
+</nav>
+
+<script>
+  // Simple mobile toggle
+  document.getElementById('mobileToggle')?.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+
+  // Tiny "hover intent" for desktop to prevent flicker when leaving the trigger
+  (function(){
+    const li = document.getElementById('gamesMenu');
+    let hideTimer;
+    li.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimer);
+      li.classList.add('hovering');
+    });
+    li.addEventListener('mouseleave', () => {
+      hideTimer = setTimeout(() => li.classList.remove('hovering'), 120);
+    });
+  })();
+</script>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Black Sun Games</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head><body class="bg-black text-gray-200">
+  <!-- reuse the same header/nav from index.html -->
+  <div data-include="header"></div>
+  <div data-include="nav"></div>
+
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-6">
+    <h1 class="text-glass text-3xl font-bold">About Black Sun Games</h1>
+<section id="about">
+  <p class="text-glass"><strong>Imagination engineered into play.</strong></p>
+
+  <p class="text-glass">
+    Founded by creators who believe that games should spark wonder, challenge the mind, and invite exploration, 
+    <strong>Black Sun Games Inc.</strong> is an independent game development studio dedicated to crafting worlds that feel alive —
+    from the first line of code to the last flicker of light in a fantasy sky.
+  </p>
+
+  <p class="text-glass">
+    Originally established as a small VR-focused studio, Black Sun Games has since evolved into a versatile developer of 
+    <strong>PC and mobile experiences</strong> that combine depth, creativity, and accessibility. Our titles balance rich lore, 
+    stylized art, and solid design — blending classic inspirations with modern technology to create gameplay that’s as memorable as it is replayable.
+  </p>
+
+  <p class="text-glass">
+    At our core, we’re <strong>worldbuilders and storytellers.</strong><br>
+    We build universes that players can return to again and again — whether it’s the whimsical chaos of 
+    <em>Max Twist</em>, the high-stakes arena of <em>Space Vault: Alien Coliseum</em>, or the strategic empire building of 
+    <em>Terrestrial Conquest</em>, where board-game clarity meets 4X ambition.
+  </p>
+
+  <h3 class="text-glass">Our Mission</h3>
+  <p class="text-glass">
+    To create games that ignite curiosity, reward creativity, and bring players together — across genres, platforms, and worlds.
+    Every project we make aims to be more than a game; it’s an experience shaped by imagination, driven by design, and refined through play.
+  </p>
+
+  <h3 class="text-glass">Our Philosophy</h3>
+  <ul>
+    <li class="text-glass"><strong>Player-First Design:</strong> Fun, fairness, and freedom of choice guide every mechanic.</li>
+    <li class="text-glass"><strong>Innovation with Heart:</strong> We experiment with systems that surprise without sacrificing clarity.</li>
+    <li class="text-glass"><strong>Sustainable Creativity:</strong> Independent development done with integrity, collaboration, and craft.</li>
+  </ul>
+
+  <p class="text-glass">
+    <strong>Black Sun Games Inc.</strong> is more than a studio — it’s a growing constellation of dreamers, engineers, and artists building universes worth exploring.
+  </p>
+</section>
+
+<!-- Meet the Team -->
+<section id="team" class="max-w-6xl mx-auto px-6 py-12">
+  <h2 class="text-glass text-2xl md:text-3xl font-bold text-center mb-10">Meet the Team</h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Mad Scientist Drake -->
+    <article class="text-dark text-center rounded-xl p-6 shadow">
+      <img
+        src="scientist.png"
+        alt="Portrait of Mad Scientist Drake"
+        class="w-36 h-36 mx-auto rounded-full object-cover ring-2 ring-yellow-500"
+      />
+      <h3 class="mt-4 text-xl font-semibold">Mad Scientist Drake</h3>
+      <p class="mt-2 text-gray-300">
+        The Mad Scientist is the company's President and one of the main developers for UI and game development.
+        He has created many potent potions to keep the crew running when nothing else works. He prays to the
+        “Lord of Latte” and is a major reason the work gets done.
+      </p>
+    </article>
+
+    <!-- Admiral Starburns -->
+    <article class="text-dark text-center rounded-xl p-6 shadow">
+      <img
+        src="admiral.png"
+        alt="Portrait of Admiral Starburns"
+        class="w-36 h-36 mx-auto rounded-full object-cover ring-2 ring-yellow-500"
+      />
+      <h3 class="mt-4 text-xl font-semibold">Admiral Starburns</h3>
+      <p class="mt-2 text-gray-300">
+        The Admiral keeps us all in line when we have bad ideas and gives us ideas that are far better—but not
+        always agreeable. He is the company Secretary and, with a little help from Drake, wrangles the social
+        media. If you've seen anything on our X/Twitter or Facebook—blame him. He keeps the media flowing.
+      </p>
+    </article>
+
+    <!-- Flight Commander Penguin -->
+    <article class="text-dark text-center rounded-xl p-6 shadow">
+      <img
+        src="commander.png"
+        alt="Portrait of Flight Commander Penguin"
+        class="w-36 h-36 mx-auto rounded-full object-cover ring-2 ring-yellow-500"
+      />
+      <h3 class="mt-4 text-xl font-semibold">Flight Commander Penguin</h3>
+      <p class="mt-2 text-gray-300">
+        Penguin is the almighty leader in all things Dev, Math, and Physics. He is the company Treasurer, and
+        more than that, bends the laws at will (and breaks them with the stroke of his keys if they don't fit
+        his needs). He can and will recreate gravity at every turn and ensures the complex systems are operating
+        on all reactors. Nuclear.
+      </p>
+    </article>
+  </div>
+</section>
+    
+  </main>
+
+  <div data-include="footer"></div>
+  <script>/* (Optional) If you want includes, we can wire these up later. */</script>
+  
+    <!-- Footer -->
+  <footer class="bg-black text-center text-gray-300 py-6 mt-12">
+    <p>&copy; 2025 Black Sun Games Inc. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://store.steampowered.com/search/?developer=Black%20Sun%20Games%20Inc."><img src="Steam_icon_logo.svg.png" alt="Steam" class="h-6"></a>
+      <a href="https://www.facebook.com/gaming/BattleBSG"><img src="Facebook-logo.png" alt="Facebook" class="h-6"></a>
+      <a href="https://x.com/Black_Sun_Games"><img src="Xlogo.png" alt="Twitter" class="h-6"></a>
+      <a href="https://www.patreon.com/blacksungames"><img src="PatreonLogo.png" alt="Patreon" class="h-6"></a>
+      <a href="https://www.youtube.com/@black-sun-games/featured"><img src="YouTubeLogo.png" alt="YouTube" class="h-6"></a>
+    </div>
+  </footer>
+  
+</body></html>
