@@ -31,8 +31,17 @@ nav .menu-group:focus-within .menu-panel { display: block; }
 
   
 }
-.btn-neon { background:#22d3ee; color:#061216; }
-.btn-neon:hover { background:#2dd4bf; }
+.btn-neon{
+  background:#22d3ee;   /* neon teal */
+  color:#061216;
+  transition:background-color .2s ease, transform .06s ease;
+}
+.btn-neon:hover{
+  background:#2dd4bf;   /* hover shade */
+}
+.btn-neon:active{
+  transform: translateY(1px);
+}
 
 .nav-item {
   display: inline-flex;         /* behave like a flex tile, not inline text */
@@ -91,3 +100,4 @@ nav .menu-group:focus-within .menu-panel { display: block; }
 background: linear-gradient(145deg, rgba(0,0,100,0.3), rgba(0,100,100,0.3));
 
 }
+
