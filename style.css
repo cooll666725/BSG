@@ -31,6 +31,8 @@ nav .menu-group:focus-within .menu-panel { display: block; }
 
   
 }
+.btn-neon { background:#22d3ee; color:#061216; }
+.btn-neon:hover { background:#2dd4bf; }
 
 .nav-item {
   display: inline-flex;         /* behave like a flex tile, not inline text */
@@ -87,4 +89,5 @@ nav .menu-group:focus-within .menu-panel { display: block; }
     0 0 10px rgba(255, 255, 255, 0.8),
     0 0 15px rgba(0, 255, 255, 0.8);
 background: linear-gradient(145deg, rgba(0,0,100,0.3), rgba(0,100,100,0.3));
+
 }
